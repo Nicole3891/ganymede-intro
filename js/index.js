@@ -18,8 +18,7 @@
     'Active Listener', 
     'Fast Learner', 
     'Work well under stress']
-  //let skillSelection = document.getElementById('skills');
-  //let skillList = skillSelection.querySelector('ul');
+  
   const skillSelection =document.querySelector('#skills');
   const skillList = skillSelection.querySelector('ul');
   for(let i = 0; i < skills.length; i++) {
@@ -56,11 +55,6 @@
     email}">${name}</a> &nbsp;</p>
   </div>`
 
-
-  
-    
-
-
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = "button";
@@ -77,25 +71,40 @@
     //messageList.prepend(newMessage)
     e.target.reset()
   
-
-
-
-
-
-
-
-
-
-
-
   })
-  
-  
-     
 
+  // Challenge 4. create the XMLHttpRequest
+    
+    var githubRequest = new XMLHttpRequest();
+    githubRequest.open('GET', 'https://api.github.com/users/nicole3891/repos');
+    githubRequest.send();
+    githubRequest.addEventListener('load', function () {
+      if (githubRequest.readyState === 4 && githubRequest.status === 200){
+      const repositories = JSON.parse(this.response);
+      //console.log(this.response)
+      const projectSection = document.getElementById('projects');
+      const projectList = projectSection.querySelector('ul');
+      projectList.classList.add('link')
+      
+      
+    for (let i = 0; i < repositories.length; i ++) {
+      const project = document.createElement('li');
+      //var a = document.createElement('a');
+      //a.href = repo.html_url;
+      //a.textContent = repositories.name
+      project.innerHTML = repositories[i].name;
+      projectList.appendChild(project);
+     }
+   }
+  })
+
+   
+    
+    
+  
     document.addEventListener('DOMContentLoaded', () => {
       renderCopyright()
-      renderSkillsList()
-      messageForm()
+     // skillSelection()
+      //messageForm()
     })
   })()

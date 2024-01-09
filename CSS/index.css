@@ -24,8 +24,7 @@ body {
 }
 
 h1, 
-h2, 
-h3
+h2
  {
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -191,15 +190,6 @@ section {
   min-width: 100px;
   padding: 0.5rem 1rem;
   transition: opacity 0.2s ease-in-out;
-}
-
-.button--large {
-  font-size: 1.125rem;
-}
-
-.button--minimal {
-  background-color: var(--color-lighter);
-  color: var(--color-darker);
 }
 
 .button--danger {
