@@ -80,7 +80,7 @@
   })
   
  
-  // Challenge 4. create the XMLHttpRequest
+   //Challenge 4. create the XMLHttpRequest
    
   var githubRequest = new XMLHttpRequest();
   githubRequest.open('GET', 'https://api.github.com/users/nicole3891/repos');
@@ -88,10 +88,10 @@
   githubRequest.addEventListener("load", function () {
    
     var repositories = JSON.parse(this.response);
-    console.log(this.response)
+    //console.log(this.response)
     const projectSection = document.getElementById('projects');
     const projectList = projectSection.querySelector('ul');
-    //projectList.classList.add('link')
+    
        
 for (let i = 0; i < repositories.length; i ++) {
   const project = document.createElement('li');
@@ -102,12 +102,11 @@ for (let i = 0; i < repositories.length; i ++) {
   a.classList.add('link--no-color');
   
   project.appendChild(a)
-  //project.innerHTML = a;
+ 
   projectList.appendChild(project);
  }
-
-    
-});
+})
+ 
 
   
   
@@ -115,6 +114,6 @@ for (let i = 0; i < repositories.length; i ++) {
       renderCopyright();
       //renderSkillsList()
       //messageForm()
-      //projectsWithXHR()
-    });
+      //projectsWithFetch()
+    })
 }) ();
