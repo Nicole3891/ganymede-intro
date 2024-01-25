@@ -141,7 +141,7 @@
           for (let repository of data) {
             const project = document.createElement('li');
             var a = document.createElement('a');
-            project.innerHTML = `<a class="link link--no-decor" href="${repository.html_url}">${repository.name}</a>`
+            project.innerHTML = `<a class="link link--no-decor" target="_blank" href="${repository.html_url}">${repository.name}</a>`
               projectList.appendChild(project)
           }
         })
